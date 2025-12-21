@@ -8,7 +8,7 @@ if (document.getElementById('loginForm')) {
         const pin = document.getElementById('pin').value;
 
         try {
-            const response = await fetch('/api/login', {
+            const response = await fetch('https://vercel.com/francis-barakas-projects/mwikipsvapp/44JKbYZtd9gtM9kMgU6vieircHfD/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, pin })
@@ -30,7 +30,7 @@ if (document.getElementById('loginForm')) {
         const username = prompt('Enter your username or phone number for password reset:');
         if (username) {
             try {
-                const response = await fetch('/api/forgotPassword', {
+                const response = await fetch('https://vercel.com/francis-barakas-projects/mwikipsvapp/44JKbYZtd9gtM9kMgU6vieircHfD/api/forgotPassword', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ username })
@@ -57,7 +57,7 @@ if (document.getElementById('vehicleForm')) {
     confirmBtn.addEventListener('click', async () => {
         const registration = document.getElementById('registration').value;
         try {
-            const response = await fetch(`/api/vehicleDetails?registration=${encodeURIComponent(registration)}`);
+            const response = await fetch(`https://vercel.com/francis-barakas-projects/mwikipsvapp/44JKbYZtd9gtM9kMgU6vieircHfD/api/vehicleDetails?registration=${encodeURIComponent(registration)}`);
             vehicleData = await response.json();
             if (vehicleData.error) {
                 alert('Error: ' + vehicleData.error);
@@ -86,7 +86,7 @@ if (document.getElementById('vehicleForm')) {
                 }
             }
             try {
-                const response = await fetch('/api/updateContribution', {
+                const response = await fetch('https://vercel.com/francis-barakas-projects/mwikipsvapp/44JKbYZtd9gtM9kMgU6vieircHfD/api/updateContribution', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ registration: vehicleData.registration, ...updatedData })
@@ -127,5 +127,6 @@ if (document.getElementById('vehicleForm')) {
             }
         }
     }
+
 
 }
